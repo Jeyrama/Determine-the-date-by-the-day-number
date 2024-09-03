@@ -32,3 +32,8 @@ function getDay(day, isLeap){
 }
 
 // or
+
+function getDay(day, isLeap) {
+  const d = new Date(1999 + isLeap, 0, day);
+  return d.toLocaleString('en', { month: 'long' }) + ', ' + d.getDate();
+}
