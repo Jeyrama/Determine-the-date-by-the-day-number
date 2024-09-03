@@ -19,3 +19,14 @@ Examples:
 
 
 // Solution
+
+const monthFormat = Intl.DateTimeFormat('en-US', { month: 'long' });
+const dayFormat = Intl.DateTimeFormat('en-US', { day: 'numeric' });
+
+function getDay(day, isLeap){
+  if(day > 365 + isLeap) {
+    return "wrong day";
+  }
+  let date = new Date(2005 - isLeap, 0, day);    
+  return `${monthFormat.format(date)}, ${dayFormat.format(date)}`;
+}
